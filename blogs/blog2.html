@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Philips Smart Light Bulbs can expose your WiFi Network</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Philips Smart Light Bulbs can expose your WiFi Network"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog3.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Philips Smart Light Bulbs can expose your WiFi Network</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.trendmicro.com"><img class="img-fluid" src="images/blog2-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.trendmicro.com" target="_blank">www.trendmicro.com (Trend Micro)</a></figcaption>
+				    </figure>
+				    <p>There are potentially many ways a hacker can gain access to your network by exploiting vulnerable machines, servers, network devices, hardware devices, smartphones, web applications, software and so on. The use of smart devices have essentially made our lives sophisticated and easy, but these smart but not-so-secure devices when exploited lead to massive data breaches or ransomware attacks on the network without even cracking passwords.</p>
+
+				    <p>On February 5 2020, Check Point experts revealed a high severity vulnerability affecting Philips Hue Smart Light Bulbs. This vulnerability can be exploited over the air from a distance of 100 meters and exploiting into a targeted WiFi network.</p>
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>This newly discovered vulnerability is tracked down as CVE-2020-6007 which has a CVSS base score of 7.9. The vulnerability takes advantage of the ZigBee communication protocol used by Philips smart bulbs, which in turn leads to heap-based buffer overflow. ZigBee is a widely used wireless technology designed to let each device communicate with any other device on the network [1]. This protocol is used by many IoT devices including Amazon Echo, Samsung SmartThings, Belkin Emo and so on. Check Point has mentioned that the hacker can infiltrate a home or an organization's network by using a laptop and an antenna over a distance of 100 meters. Check Point has also confirmed that the heap based buffer overflow takes place in the “bridge” component which is responsible for handling remote commands that are sent to the smart bulbs over ZigBee protocol running on devices like Alexa Home Assistant which controls the smart bulbs.
+					</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>Researchers chose not to release the PoC exploit for this vulnerability, so as to provide time for the affected Philips Hue clients for applying patches. However, researchers have published a video demonstrating the attack performed [3]. This vulnerability directly violates Confidentiality and Integrity of the CIA Triad. IoT devices are commonly considered as a boon to the new digitized era. But, such poor configurations in the firmware poses a critical security risk. The best way to tackle such issues is to immediately release patches for the vulnerability and alert the clients about the security flaw. Being transparent can only help to improve the company’s reputation.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://thehackernews.com/2020/02/philips-smart-light-bulb-hacking.html" target = "_blank">
+							<li class="mb-2">Flaw in Philips Smart Light Bulbs Exposes Your WiFi Network to Hackers</li>
+						</a>
+						<a href = "https://blog.checkpoint.com/2020/02/05/the-dark-side-of-smart-lighting-check-point-research-shows-how-business-and-home-networks-can-be-hacked-from-a-lightbulb/" target = "_blank">
+						  <li class="mb-2">Check Point Research Shows How Business and Home Networks Can Be Hacked from a Lightbulb</li>
+						</a>
+						</ol>
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog1.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog3.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
