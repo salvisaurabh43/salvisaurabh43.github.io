@@ -1,11 +1,157 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>SoundCloud Addresses Several Critical Vulnerabilities in its APIs</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoundCloud Addresses Several Critical Vulnerabilities in its APIs"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog4.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">SoundCloud Addresses Several Critical Vulnerabilities in its APIs</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.trendmicro.com"><img class="img-fluid" src="images/blog2-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.trendmicro.com" target="_blank">www.trendmicro.com (Trend Micro)</a></figcaption>
+				    </figure>
+				    <p>Security is considered to be utmost important when a software deals with user data. This applies to almost all the softwares. SoundCloud is an audio social platform which is similar to Youtube video streaming platform. SoundCloud has addressed several critical vulnerabilities in its Application Programming Interface (API). According to the CheckMarx Security Research Team, these bugs could have allowed threat actors to compromise user accounts, perform DoS attacks, and exploit the service to steal valuable information.</p>
+
+				    <p>On November 11 2019, according to Paulo Silva from CheckMarx Security Research, 3 different security vulnerabilities were reported in the software API; Broken Authentication, rate-limiting bug, and improper input validation.</p>
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>According to Paulo Silva, the broken authentication in the /sign-in/password endpoint of the API fails to implement correct security measures so as to lock the account in case of frequent failed authentication attempts. The endpoint purely depends on rate limiting which can be exploited using brute-force methods such as credential-stuffing. The rate-limiting bug describes how SoundCloud API does not enforce a limit when a user tries to retrieve a number of songs using searchers. A potential attacker can send a huge amount of POST requests from a single IP Address, or on the other hand, he can issue a high-volume GET request for a large number of songs. Since rate limiting is not enforced, the above 2 attacks can overwhelm the API. This could also result in biased demand for certain tracks or artists, which in turn, can cause an impact on the business. The hacker can also perform DoS attacks by exploiting the rate-limiting bug. CheckMarx Security Research also discovered improper input validation flaw in the API. According to the research, the threat actor can use long character strings while uploading a new song and its description. This allows the hacker to perform cross-site scripting (XSS) attacks or SQL Injection attacks.</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>As you can infer, the above vulnerabilities clearly affect all 3 pillars of the CIA triad. Confidentiality is in question when user accounts are compromised. Availability is affected when hackers perform DoS attacks using rate-limiting bugs. Integrity is compromised when the hacker exploits improper input validation flaw using XSS or SQL injection attacks. These attacks could cause a serious threat to the SoundCloud business. Fortunately, SoundCloud immediately reached out to the CheckMarx Security Research Team and addressed all the vulnerabilities. By January 30 2020, SoundCloud patched these vulnerabilities in their latest update.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://threatpost.com/soundcloud-dos-account-takeover/152838/" target = "_blank">
+							<li class="mb-2">SoundCloud Tackles DoS, Account Takeover Issues</li>
+						</a>
+						<a href = "https://www.checkmarx.com/blog/checkmarx-research-soundcloud-api-security-advisory" target = "_blank">
+						  <li class="mb-2">Checkmarx Research: SoundCloud API Security Advisory</li>
+						</a>
+						<a href = "https://www.bleepingcomputer.com/news/security/soundcloud-fixed-api-flaws-that-could-lead-to-account-takeover/" target = "_blank">
+						  <li class="mb-2">SoundCloud Fixed API Flaws That Could Lead to Account Takeover</li>
+						</a>
+						</ol>
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog2.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog4.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
