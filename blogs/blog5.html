@@ -1,11 +1,151 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>High Severity Flaw in NVIDIA GPU Display Driver</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High Severity Flaw in NVIDIA GPU Display Driver"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog6.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">High Severity Flaw in NVIDIA GPU Display Driver</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.izoologic.com"><img class="img-fluid" src="images/blog5-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.izoologic.com" target="_blank">www.izoologic.com (IZooLogic)</a></figcaption>
+				    </figure>
+				    <p>Nvidia, the leading producer of graphic processing unit, has released a security update on February 28, 2020. The security update addresses vulnerabilities present in GPU display driver, vGPU Manager and vGPU graphics driver. These security flaws are categorized as medium to high severity. A potential attacker can perform code execution, local escalation of privileges, exposure of information, and Denial of Service attacks on Windows platform[1].</p>
+
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>The security issues reported in the GPU display driver can be attacked only if the attacker has access to the machine. The attacker would have to hijack a compromised Windows machine and then exploit the flaws in the GPU display driver. An attacker can exploit the flaws in vGPU Manager and vGPU graphics driver and perform Denial of Service attack. This DoS attack is caused due to null pointer dereferencing occuring in the kernel module of Nvidia vGPU Manager. This will lead to the system being unusable for day-to-day business. The attacker can take over a compromised system and perform code execution and can  capture crucial information. This can cause a major impact on Nvidia’s business. Nvidia has alerted its clients and customers to immediately patch their GeForce, Quadro, NVS, and Tesla Widows display drivers[1]. The patches are available on the Nvidia Driver Downloads page.</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>The security flaws addressed by Nvidia clearly affect the CIA Triad. An attacker can cause crucial information disclosure; compromising Confidentiality. Code execution and escalation of privileges can compromise Integrity of the Systems. Availability is compromised when a potential attacker performs Denial of Service attacks. Nvidia has taken good steps to make sure their clients and customers patch their systems as soon as possible.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://www.bleepingcomputer.com/news/security/nvidia-fixes-high-severity-flaw-in-windows-gpu-display-driver/?&web_view=true" target = "_blank">
+							<li class="mb-2">NVIDIA Fixes High Severity Flaw in Windows GPU Display Driver</li>
+						</a>
+						</ol>
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog4.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog6.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
+
