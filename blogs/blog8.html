@@ -1,11 +1,157 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>Adobe Fixes a Critical Flaw in its Creative Cloud Application for Windows</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adobe Fixes a Critical Flaw in its Creative Cloud Application for Windows"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43" target="_blank">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog6.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Adobe Fixes a Critical Flaw in its Creative Cloud Application for Windows</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.sophos.com"><img class="img-fluid" src="images/blog8-banner.png" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.sophos.com" target="_blank">www.sophos.com (Sophos)</a></figcaption>
+				    </figure>
+				    <p>A serious flaw was discovered in the Creative Cloud Desktop Application for Windows machines. This vulnerability was reported by Jiadong Lu from South China University of Technology and Zhiniang Peng who is a security researcher at Qihoo 360 Core Security[1]. If exploited, it would lead to arbitrary deletion of files in the scope of the current user.</p>
+
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>Creative Cloud Desktop App is a centralized management software which allows users to manage, update and launch other Adobe products such as Illustrator, Photoshop, etc. The vulnerability is classified as CVE-2020-3808 and has a CVSS v2 exploitability score of 8.6/10 [2]. This issue is caused due to time-of-check to time-of-use race condition. A race condition occurs when two processes simultaneously attempt to access the same resource. In this specific condition, “the state of the resource is changed between the time interval when a process checks the condition and when the same process tries to access the resource based on the condition”[3]. This allows an unauthorized attacker to allow deletion of arbitrary files on the user machine. The vulnerability affects all the versions of Creative Cloud App which are 5.0 and below. </p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>Adobe has released an update version 5.1 which addresses this security bug and addresses its customers to update their applications to the latest firmware. Since this vulnerability can cause arbitrary deletion of files, it clearly violates the Integrity of the system.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://threatpost.com/critical-adobe-flaw-out-of-band-security-update/154075/" target = "_blank">
+							<li class="mb-2">Critical Adobe Flaw Fixed in Out-of-Band Security Update</li>
+						</a>
+						<a href = "https://vulmon.com/vulnerabilitydetails?qid=CVE-2020-3808" target = "_blank">
+							<li class="mb-2">CVE-2020-3808 Creative Cloud Desktop Application versions 5.0...</li>
+						</a>
+						<a href = "https://hackernoon.com/time-of-check-to-time-of-use-toctou-a-race-condition-99c2311bd9fc" target = "_blank">
+							<li class="mb-2">Time of check to time of use (TOCTOU): A race condition</li>
+						</a>
+						</ol>		
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog7.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog9.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
+

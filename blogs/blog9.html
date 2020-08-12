@@ -1,11 +1,151 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>Botnet Targets Critical Vulnerability in Grandstream Appliance</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Botnet Targets Critical Vulnerability in Grandstream Appliance"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43" target="_blank">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog6.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Botnet Targets Critical Vulnerability in Grandstream Appliance</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.anith.com"><img class="img-fluid" src="images/blog9-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.anith.com" target="_blank">www.anith.com (ANITH)</a></figcaption>
+				    </figure>
+				    <p>Cybersecurity attacks are getting highly sophisticated as we progress. One of them is a botnet attack wherein a large number of affected computers are controlled by a Command & Control (C&C) server to affect more vulnerable systems. The chain continues to grow and it becomes difficult to curb the attack. A recent example of botnet attack is the Hoaxcall botnet.</p>
+
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>Hoaxcall botnet is actively targeting a critical security flaw in Grandstream UCM6200 series device[1]. This vulnerability is rated critical and classified as CVE-2020-5722 and has a CVSS3.1 base score of 9.8 on 10[1]. Although this vulnerability has been patched in their latest update, it is not upto the users to patch their systems to the latest firmware as soon as possible. This vulnerability affects the software versions prior to 1.0.19.20. An attacker can exploit this vulnerability by executing unauthenticated SQL Injection via malicious HTTP Request. This will allow the attacker to spawn a reverse shell with root privileges. Once the attacker has a root access to a system, he can basically execute any commands and damage the system. By performing SQL injection attacks in the web interface of the UCM6200 series, the attacker can compromise the SQLite Database in the backend. The software is also vulnerable to remote HTML code execution attacks. Researchers at Tenable have reported  this vulnerability and urge customers to update their software to the latest firmware. Hoaxcall botnet is also actively targeting the security flaw classified as CVE-2020-8515 discovered in Draytek Vigor routers. By leveraging both of these attacks, Hoaxcall botnet can launch a variety of Distributed Denial of Service (DDOS) attacks.</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>Both of these critical vulnerabilities have been patched by Grandstream and DrayTek by releasing 1.0.20.17 update and 1.5.1 update respectively. Clearly, these security flaws affect all the aspects of the CIA Triad. Confidentiality is compromised as the attacker can hijack the SQLite Database. Integrity is compromised as the attacker can spawn a reverse shell and execute arbitrary code. Availability is compromised as Hoaxcall botnet can launch a variety of DDOS attacks. Now, it depends on the clients to update their systems as soon as possible to avoid being a victim to this attack.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://www.tenable.com/security/research/tra-2020-15" target = "_blank">
+							<li class="mb-2">Grandstream UCM62xx SQL Injection - Research Advisory</li>
+						</a>
+						</ol>		
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog8.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog10.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
+

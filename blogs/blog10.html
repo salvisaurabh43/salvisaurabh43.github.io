@@ -1,11 +1,157 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>Windows 10 SMBGhost RCE exploit demoed by researchers</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Windows 10 SMBGhost RCE exploit demoed by researchers"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43" target="_blank">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog6.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">Windows 10 SMBGhost RCE exploit demoed by researchers</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.bleepingcomputer.com"><img class="img-fluid" src="images/blog10-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.bleepingcomputer.com" target="_blank">www.bleepingcomputer.com (Bleeping Computer)</a></figcaption>
+				    </figure>
+				    <p>Microsoft’s SMB Protocol is notoriously famous for security flaws. SMB Protocol is a network communication protocol and is widely used by various corporates around the globe. EternalBlue was the infamous vulnerability present in SMB. But now, a new flaw was discovered in the latest version of SMB (v3.1.1). This vulnerability, termed as SMBGhost, is classified as CVE-2020-0796 and has a CVSS score of perfect 10 and declared as Critical[4]. SMBGhost is based on the integer overflow vulnerability[3].</p>
+
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>SMBGhost affects systems which are running Windows 10 version 1903 and 1909 and Windows Server version 1903 and 1909[1]. Basically, an unauthenticated attacker can send a maliciously crafted request to the vulnerable SMB server and can execute remote code on the target server[2]. In the case of a client machine, the attacker has to play the role of a server[2]. Basically, the attacker has to configure a vulnerable SMB server and trap the user to connect to his server. As of now, there have been no signs of public exploits. But, researchers at Ricerca Security have developed a PoC video exploiting the critical SMBGhost Remote Code Execution. The researchers have provided the complete source code to its customers who have subscribed to their premium services[3]. Another PoC video exploiting the SMBGhost DoS was released by security researcher Marcus Hutchins at Kryptos Logic. According to the Internet wide scan performed by Kryptos Logic, 48000 Windows 10 hosts are vulnerable to SMBGhost[1]. The CVE-2020-0796 is a serious flaw and Microsoft urges their clients to patch their machines against SMBGhost.</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>Microsoft has addressed this critical flaw by releasing a security advisory in which Microsoft has mentioned various strategies to overcome this flaw. The critical security flaw in the SMB Protocol clearly violates the CIA Triad. Confidentiality is compromised as user data can be leaked by exploiting this vulnerability. Integrity is compromised as the attacker can perform remote code execution on the vulnerable systems. Availability is compromised as the attacker can perform Denial of service attacks on the target systems.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://www.bleepingcomputer.com/news/security/windows-10-smbghost-rce-exploit-demoed-by-researchers/?&web_view=true" target = "_blank">
+							<li class="mb-2">Windows 10 SMBGhost RCE exploit demoed by researchers</li>
+						</a>
+						<a href = "https://ricercasecurity.blogspot.com/2020/04/ill-ask-your-body-smbghost-pre-auth-rce.html" target = "_blank">
+							<li class="mb-2">"I'll ask your body": SMBGhost pre-auth RCE abusing Direct Memory Access structs</li>
+						</a>
+						<a href = "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-0796" target = "_blank">
+							<li class="mb-2">CVE-2020-0796</li>
+						</a>
+						</ol>		
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog9.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog11.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
+

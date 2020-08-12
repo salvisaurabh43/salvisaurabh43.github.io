@@ -1,11 +1,151 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Saurabh's Blog</title>
-    <meta http-equiv="Refresh" content="0; url=../progress/" />
-    <meta name="description" content="Saurabh's Blog"/>
-    <link rel="icon" type="image/x-icon" href="resume/images/logo.gif" />
-  </head>
-  <body>
-  </body>
-</html>
+<html lang="en"> 
+<head>
+    <title>NordVPN patched a critical vulnerability in its payments platform</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High Severity Flaw in NVIDIA GPU Display Driver"> 
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.gif" />
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Saurabh's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+					<div class="bio mb-3">Hi, this is Saurabh Salvi. I love to write articles on cybersecurity issues. Also, I engage myself in various CTFs such as HackTheBox and VulnHub.</div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item">
+			            	<a href="https://www.twitter.com/salvisaurabh43" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item">
+			            	<a href="https://www.linkedin.com/in/salvisaurabh43" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a>
+			            </li>
+			            <li class="list-inline-item"><a href="https://www.github.com/salvisaurabh43" target="_blank">
+			            	<i class="fab fa-github-alt fa-fw"></i></a>
+			            </li>
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li> -->
+			            <!-- <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li> -->
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item">
+					    <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="blog6.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="../progress/"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+					
+				    <a class="btn btn-primary" href="../progress/" target="_blank">Get in Touch</a>
+				    
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">High Severity Flaw in NVIDIA GPU Display Driver</h2>
+				    <div class="meta mb-3"><span class="date">Published 3 months ago</span><span class="time">5 min read</span><span class="comment"><a href="#">4 comments</a></span></div>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://www.technadu.com"><img class="img-fluid" src="images/blog6-banner.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption">Image Credit: <a href="https://www.technadu.com" target="_blank">www.technadu.com (TechNadu)</a></figcaption>
+				    </figure>
+				    <p>Payment platforms play a very critical role in an ecommerce workflow. The data handled by these platforms include credit card details, bank account numbers, SSN, email-ids, contact numbers, address and so on. Therefore, it is of utmost importance to secure the payment platform.</p>
+
+				    
+				    <h3 class="mt-5 mb-3">Insights</h3>
+				    <p>On February 6 2020, NordVPN disclosed a patched security flaw in its payment platform. NordVPN is a part of the Hackerone bug bounty program and it disclosed the patched flaw after one of the security researchers reported the flaw on Hackerone. The vulnerability is rated as severe with a 7-8.9/10 score, according to Hackerone. Basically, the vulnerability provided access to view the user data without any authentication. By sending a straightforward HTTP-POST Request to the NordVPN payments API, it would return a response without any authentication which included sensitive user information. The user data can be easily enumerated by changing the values of id and user_id . Hackers can take advantage of this flaw by developing a script which will enumerate the user_id and send a large number of HTTP POST Request to the vulnerable API. The API would send a positive response for the valid user_id.</p>
+
+					<h3 class="mt-5 mb-3">Conclusion</h3>
+				    <p>This security bug addressed by NordVPN on Hackerone, clearly affects the confidentiality and integrity of the CIA Triad. Confidentiality is compromised when the user information is exposed due to the vulnerable API. Integrity of the data is compromised since the potential attacker has access to the data. He can modify the data as per his will.</p>
+					
+					<h3 class="mt-5 mb-3">References</h3>
+				    <p>
+					    <ol class="mb-5">
+						<a href = "https://www.theregister.co.uk/2020/03/06/nordvpn_no_auth_needed_view_user_payments/?&web_view=true" target = "_blank">
+							<li class="mb-2">NordVPN quietly plugged vuln where an HTTP POST request without authentication would return detailed customer data</li>
+						</a>
+						</ol>
+					</p>
+				
+				   
+			    </div>
+				    
+			    <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="blog5.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog7.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+				
+				
+		    </div><!--//container-->
+	    </article>
+	    
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+                <small class="copyright">© <a href="https://terpconnect.umd.edu/~ssalvi43" target="_blank">Saurabh Salvi</a></small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+       
+    <!-- Javascript -->          
+    <script src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="../assets/plugins/popper.min.js"></script> 
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="../assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
+
+
